@@ -1,11 +1,15 @@
 # My [.]files
-My macOs development environment configuration files.  
-I build my dotfiles by taking inspiration from other repositories, finding new ways to tweak my setup or organize things, and using the parts which work for me.
+The main goal is to be able to setup a new machine as quickly and with as less interaction as possible.
 
-## Installation
-```git clone https://github.com/dimitriosvasilas/dotfiles.git ~/.dotfiles && cd ~/.dotfiles && bash bootstrap.sh ```
+## Setup
+```
+git clone --separate-git-dir=$HOME/.dotfiles git@github.com:dvasilas/dotfiles.git dotfiles-tmp
+rsync --recursive --verbose --exclude '.git' dotfiles-tmp/ $HOME/
+rm --recursive dotfiles-temp
+```
 
-## Resources
--  [GitHub ❤ ~/](http://dotfiles.github.io/)
+## Acknowledgements
+Code and inspiration taken from multiple sources, including:
+- [GitHub ❤ ~/](http://dotfiles.github.io/)
 - [Mathias’s dotfiles](https://github.com/mathiasbynens/dotfiles)
 - [Paul's dotfiles](https://github.com/paulirish/dotfiles)

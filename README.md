@@ -1,11 +1,9 @@
 # My [.]files
 The main goal is to be able to setup a new machine as quickly and with as less interaction as possible.
 
-## Setup
+## Setup (using Stow)
 ```
-git clone --separate-git-dir=$HOME/.dotfiles git@github.com:dvasilas/dotfiles.git dotfiles-tmp
-rsync --recursive --verbose --exclude '.git' dotfiles-tmp/ $HOME/
-rm --recursive dotfiles-temp
+make install
 ```
 
 ## Acknowledgements

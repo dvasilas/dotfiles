@@ -5,6 +5,8 @@ export PLATFORM=$(uname -s)
 # Source global definitions
 [ -f /etc/bashrc ] && . /etc/bashrc
 
+[[ $- == *i* ]] || return
+
 for file in ~/.{extra,bash_prompt,exports,aliases,functions}; do
 	[ -r "$file" ] && source "$file"
 done

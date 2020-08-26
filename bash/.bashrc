@@ -42,6 +42,3 @@ shopt -s globstar 2> /dev/null
 
 #export GOPATH=${HOME}/go
 #export PATH=${PATH}:/usr/local/go/bin:${GOPATH}/bin
-
-#eval "$(ssh-agent -s)"
-#ssh-add ~/.ssh/id_rsa

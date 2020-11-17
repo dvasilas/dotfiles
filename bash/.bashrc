@@ -1,4 +1,6 @@
 export PATH=$PATH:$HOME/bin
+export XDG_DATA_HOME=$HOME
+export XDG_CONFIG_HOME=$HOME
 
 export PLATFORM=$(uname -s)
 
@@ -42,3 +44,5 @@ shopt -s globstar 2> /dev/null
 
 #export GOPATH=${HOME}/go
 #export PATH=${PATH}:/usr/local/go/bin:${GOPATH}/bin
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

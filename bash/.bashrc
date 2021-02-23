@@ -21,7 +21,7 @@ fi;
 
 # Enable git branch name completion if file exists
 if [ -f ~/.git-completion.bash ]; then
-  . ~/.git-completion.bash
+	. ~/.git-completion.bash
 fi
 
 ##

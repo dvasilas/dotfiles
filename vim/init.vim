@@ -24,11 +24,13 @@ call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'airblade/vim-rooter'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'fatih/vim-go'
 Plug 'preservim/nerdtree'
+Plug 'https://github.com/yegappan/mru'
 
 call plug#end()
 
@@ -42,6 +44,8 @@ let g:netrw_banner = 0
 let g:netrw_winsize = 25
 
 let g:rooter_silent_chdir = 1
+let g:airline#extensions#tabline#enabled = 1
+
 
 let mapleader = "\<Space>"
 nnoremap <leader>h :wincmd h<CR>

@@ -1,13 +1,12 @@
 [alias]
 
-	# View abbreviated SHA, description, and history graph of the latest 20 commits.
-	l = log --pretty=oneline -n 20 --graph --abbrev-commit
-
 	# View the current working tree status using the short format.
  	s = status -s
+	
+ 	d = diff 
 
 	# Show the diff between the latest commit and the current state.
- 	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+ 	dd = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
 
 
 	# `git di $number` shows the diff between the state `$number` revisions ago and the current state.
@@ -25,6 +24,8 @@
 	# Interactive rebase with the given number of latest commits.
  	reb = "!r() { git rebase -i HEAD~$1; }; r"
 
+	l = log --graph --date=relative --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ad)%Creset'
+
 [apply]
 
 	# Detect whitespace errors when applying a patch.
@@ -39,7 +40,7 @@
 
 	# Use colors in Git commands that are capable of colored output when
 	# outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
-	ui = auto
+	ui = true
 
 [color "branch"]
 
@@ -58,7 +59,8 @@
 
 	added = yellow
 	changed = green
-	untracked = cyan
+	untracked = white red
+	unmerged = magenta italic
 
 [diff]
 
@@ -68,3 +70,11 @@
 [user]
 	name = Dimitrios Vasilas
 	email = dv.vasilas@gmail.com
+[pager]
+	diff = diff-so-fancy
+	show = diff-so-fancy
+[log]
+	abbrevCommit = true
+	follow = true
+[grep]
+	extendedRegexp = true

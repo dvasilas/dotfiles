@@ -22,7 +22,10 @@ nmap Q <Nop> " 'Q' in normal mode enters Ex mode. You almost never want this.
 call plug#begin('~/.vim/plugged')
 
 Plug 'morhetz/gruvbox'
-Plug 'airblade/vim-rooter'
+Plug 'arcticicestudio/nord-vim'
+Plug 'cocopon/iceberg.vim'
+Plug 'preservim/tagbar'
+"Plug 'airblade/vim-rooter'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -34,8 +37,8 @@ Plug 'https://github.com/yegappan/mru'
 
 call plug#end()
 
-colorscheme gruvbox
-set background=dark
+colorscheme iceberg
+"set background=dark
 
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co--exclude-standard']
 
@@ -68,10 +71,21 @@ noremap <Down> <Nop>
 
 nnoremap <left> :bp<CR>
 nnoremap <right> :bn<CR>
+"
 " Golang
 let g:go_play_open_browser = 0
 let g:go_fmt_command = "goimports"
 let g:go_auto_type_info = 1 
 
 nnoremap <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+
+set splitright
+
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+autocmd BufRead,BufNewFile {*.markdown,*.mdown,*.mkdn,*.md,*.mkd,*.mdwn,*.mdtxt,*.mdtext,*.text} set filetype=markdown
+autocmd FileType markdown setlocal syntax=off 
 

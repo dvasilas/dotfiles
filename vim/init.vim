@@ -14,8 +14,14 @@ set smartcase
 set incsearch
 set mouse+=a
 set colorcolumn=80
+
 filetype plugin indent on
 set autoindent
+set expandtab
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 nmap Q <Nop> " 'Q' in normal mode enters Ex mode. You almost never want this.
 
@@ -33,7 +39,10 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'fatih/vim-go'
 Plug 'preservim/nerdtree'
+Plug 'scrooloose/nerdcommenter'
 Plug 'https://github.com/yegappan/mru'
+Plug 'christoomey/vim-tmux-navigator'
+"Plug 'scrooloose/syntastic'
 
 call plug#end()
 
@@ -77,6 +86,17 @@ let g:go_play_open_browser = 0
 let g:go_fmt_command = "goimports"
 let g:go_auto_type_info = 1 
 
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_c_include_dirs = [ '../include', 'include' ]
+let g:syntastic_c_remove_include_errors = 1
+
 nnoremap <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
 set splitright
@@ -89,3 +109,8 @@ nnoremap <C-H> <C-W><C-H>
 autocmd BufRead,BufNewFile {*.markdown,*.mdown,*.mkdn,*.md,*.mkd,*.mdwn,*.mdtxt,*.mdtext,*.text} set filetype=markdown
 autocmd FileType markdown setlocal syntax=off 
 
+highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+match ExtraWhitespace /\s\+$/
+
+set list
+set listchars=tab:▸\

@@ -1,7 +1,4 @@
 export PATH=$PATH:$HOME/bin
-export XDG_DATA_HOME=$HOME
-export XDG_CONFIG_HOME=$HOME
-
 export PLATFORM=$(uname -s)
 
 # Source global definitions

@@ -12,3 +12,8 @@ export LC_ALL='en_US.UTF-8';
 export GOPATH=${HOME}/go
 export GOROOT=/usr/local/go
 export PATH=${PATH}:${GOROOT}/bin:${GOPATH}/bin
+
+export XDG_CONFIG_HOME=${HOME}/.config
+export XDG_DATA_HOME=$HOME
+
+export PATH=$PATH:/usr/lib/diff-so-fancy

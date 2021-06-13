@@ -66,15 +66,25 @@
 
 	# Detect copies as well as renames.
 	renames = copies
-
+	tool = meld
+[difftool]
+	prompt = false
+[difftool "meld"]
+	trustExitCode = true
+	cmd = open -W -a Meld --args \"$LOCAL\" \"$REMOTE\"
 [user]
 	name = Dimitrios Vasilas
 	email = dv.vasilas@gmail.com
 [pager]
-	diff = diff-so-fancy
+#	diff = diff-so-fancy
 	show = diff-so-fancy
 [log]
 	abbrevCommit = true
 	follow = true
 [grep]
 	extendedRegexp = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

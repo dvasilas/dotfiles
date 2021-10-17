@@ -17,3 +17,7 @@ export XDG_CONFIG_HOME=${HOME}/.config
 export XDG_DATA_HOME=$HOME
 
 export PATH=$PATH:/usr/lib/diff-so-fancy
+
+export PATH=${PATH}:${HOME}/.pyenv/bin
+
+export GTK_THEME=Adwaita-dark

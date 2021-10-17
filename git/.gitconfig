@@ -2,7 +2,7 @@
 
 	# View the current working tree status using the short format.
  	s = status -s
-	
+
  	d = diff 
 
 	# Show the diff between the latest commit and the current state.
@@ -75,9 +75,10 @@
 [user]
 	name = Dimitrios Vasilas
 	email = dv.vasilas@gmail.com
+
 [pager]
-#	diff = diff-so-fancy
 	show = diff-so-fancy
+
 [log]
 	abbrevCommit = true
 	follow = true

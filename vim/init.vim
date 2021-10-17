@@ -25,6 +25,8 @@ set shiftwidth=2
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 nmap Q <Nop> " 'Q' in normal mode enters Ex mode. You almost never want this.
 
+
+set rtp +=~/.config/nvim
 call plug#begin('~/.vim/plugged')
 
 Plug 'morhetz/gruvbox'

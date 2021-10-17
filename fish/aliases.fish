@@ -21,3 +21,5 @@ alias la="ls -aH"
 alias ll="ls -l"
 alias lla="la -l"
 alias lld="exa -lD"
+
+alias suspend="sudo systemctl suspend"

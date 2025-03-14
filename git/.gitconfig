@@ -1,7 +1,14 @@
+[column]
+        ui = auto
+[branch]
+        sort = -committerdate
+[tag]
+        sort = version:refname
+[init]
+        defaultBranch = main
 [alias]
 
-	# View the current working tree status using the short format.
- 	s = status -s
+ 	s = status
 
  	d = diff 
 
@@ -26,68 +33,48 @@
 
 	l = log --graph --date=relative --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ad)%Creset'
 
-[apply]
+        remote-prune = remote prune origin
 
-	# Detect whitespace errors when applying a patch.
-	whitespace = fix
-
-[branch]
-
-	# Show most recently changed branches first.
-	sort = -committerdate
-
-[color]
-
-	# Use colors in Git commands that are capable of colored output when
-	# outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
-	ui = true
-
-[color "branch"]
-
-	current = yellow reverse
-	local = yellow
-	remote = green
-
-[color "diff"]
-
-	meta = yellow bold
-	frag = magenta bold # line info
-	old = red # deletions
-	new = green # additions
-
-[color "status"]
-
-	added = yellow
-	changed = green
-	untracked = white red
-	unmerged = magenta italic
-
+[pull]
+	ff = only
+[merge]
+	conflictstyle = zdiff3
+[rebase]
+        autoSquash = true
+        autoStash = true
+        updateRefs = true
+[push]
+        default = simple
+	autoSetupRemote = true
+[fetch]
+        prune = true
+        pruneTags = true
+        all = true
+[init]
+	defaultBranch = main
+[commit]
+	verbose = true
+[rerere]
+        enabled = true
+        autoupdate = true
+[help]
+        autocorrect = prompt
+[core]
+	pager = less
+	excludesfiles = ~/.gitignore
+	editor = nvim
 [diff]
-
-	# Detect copies as well as renames.
-	renames = copies
-	tool = meld
-[difftool]
-	prompt = false
-[difftool "meld"]
-	trustExitCode = true
-	cmd = open -W -a Meld --args \"$LOCAL\" \"$REMOTE\"
-[user]
-	name = Dimitrios Vasilas
-	email = dv.vasilas@gmail.com
-
-[pager]
-	show = diff-so-fancy
-
+        algorithm = histogram
+        colorMoved = plain
+        mnemonicPrefix = true
+        renames = true
 [log]
 	abbrevCommit = true
 	follow = true
-[grep]
-	extendedRegexp = true
-[filter "lfs"]
-	smudge = git-lfs smudge --skip -- %f
-	process = git-lfs filter-process --skip
-	required = true
-	clean = git-lfs clean -- %f
-[pull]
-	ff = only
+[user]
+	name = Dimitrios Vasilas 
+	email = dimitrios.vasilas@scality.com
+[pager]
+	show = diff-so-fancy
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
